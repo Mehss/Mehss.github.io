@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#inputField{
+    width: 75vw;
+    height: 25vh;
+    font-size: xx-large;
+}
+
+#reset{
+    display:hidden
+}
+
+button {
+    font-size: large;
+    margin-top: 0;
+}

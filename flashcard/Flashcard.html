@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onkeypress="reload(event)">
+
+    <p id="title"></p>
+    <textarea rows="4" id="inputField" oninput="checkAnswer()" spellcheck = "false"></textarea> <br>
+    <button type="button" id="nextQ" onClick="window.location.reload()" style="display: none;">Next Question</button>
+    <button type="button" id="reset" onClick="resetAnswer()"> Reset Answer </button>
+<script>
+    let j = 4
+    let problems = [
+`for (let i == 0; i < input.length; i++){
+    output += input[i]
+}`,`if (angka = 0){
+    output += angka
+}`,`for (let i = 0; i < input.length; i++);{
+    output += input[i]
+}`,`for (let i = 0; i < input.lenght; i++){
+    output += input[i]
+}`, `function penjumlahan{
+    output += input
+}`, `if (answer == kunci & nama.length > 0){
+    return(nama + ", jawaban anda benar!")
+}`, `let data = {
+    inisial: 'EA';
+    penampilan: 'ganteng'
+}`, `let data = {
+    inisial= 'EA',
+    penampilan= 'ganteng'
+}`, `let data = [
+    inisial: 'EA',
+    penampilan: 'ganteng'
+]`
+    ]
+    let solutions = [
+`for (let i = 0; i < input.length; i++){
+    output += input[i]
+}`,`if (angka == 0){
+    output += angka
+}`,`for (let i = 0; i < input.length; i++){
+    output += input[i]
+}`,`for (let i = 0; i < input.length; i++){
+    output += input[i]
+}`,`function penjumlahan(){
+    output += input
+}`,`if (answer == kunci && nama.length > 0){
+    return(nama + ", jawaban anda benar!")
+}`,`let data = {
+    inisial: 'EA',
+    penampilan: 'ganteng'
+}`, `let data = {
+    inisial: 'EA',
+    penampilan: 'ganteng'
+}`, `let data = {
+    inisial: 'EA',
+    penampilan: 'ganteng'
+}`
+    ]
+    let i = Math.floor(Math.random() * problems.length);
+    document.getElementById("inputField").value = problems[i]
+function checkAnswer() {
+  var x = document.getElementById("inputField");
+  j -= 1
+  document.getElementById("title").innerText = `Troubleshoot in ${j}`
+  if (x.value == solutions[i]){
+      document.getElementById("title").innerText = "Anda Benar!"
+      document.getElementById("nextQ").style = ""
+      x.disabled = true
+  } else if (j == 0){
+    document.getElementById("title").innerText = "Mencapai limit edit, silahkan coba lagi"
+    x.disabled = true
+    document.getElementById("nextQ").style = ""
+  }
+}
+    document.getElementById("title").innerText = `Troubleshoot in ${j}`
+function reload(event){
+    if(document.getElementById("inputField").disabled == true){
+        if (event.charCode == 13){
+            window.location.reload()
+            console.log = "yes"
+        }
+        if (event.key == " "){
+            resetAnswer()
+        }
+    }
+}
+function resetAnswer(){
+    j = 4
+    document.getElementById("inputField").disabled = false
+    document.getElementById("inputField").value = problems[i]
+}
+</script>
+
+</body>
+</html>
