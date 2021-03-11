@@ -3,6 +3,8 @@ body {
     color: white;
     text-align: center;
     font-size: xx-large;
+    background-image: url("img/bg.jpg");
+    background-position: center;
 }
 
 #inputField{

@@ -8,7 +8,6 @@ body {
 
 header {
     background-color: white;
-    position: fixed;
     width: 100%;
     top: 0;    
 }
@@ -30,6 +29,17 @@ nav {
 
 nav > a {
     padding-right: 10px;
+    text-decoration: none;
+}
+header > a {
+    text-decoration: none;
+}
+header > a > span {
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    position: relative;
+    bottom:20px;
     text-decoration: none;
 }
 
@@ -63,6 +73,8 @@ section > #Samples {
     width: 25%;
     flex: 25%;
     padding: 5px;
+    position: relative;
+    text-align:center;
 }
 
 .sampleLabel{
@@ -71,12 +83,19 @@ section > #Samples {
     color: black
 }
 
-article a:link {
-    color: blue;
-    text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    font-weight: 500;  
+.hover{
+    position:absolute;
+    text-align: center;
+}
+
+#hover{
+    position:absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    font-weight: bold
 }
 
 #rules{
@@ -88,6 +107,8 @@ article a:link {
     border-radius: 5px;
     margin: auto;
     font-size: large;
+    flex: 100%;
+    width: 100%;
 }
 footer {
     background-color: black;
